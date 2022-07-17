@@ -1,6 +1,7 @@
 using TopDownCharacterController.Project.Scripts.ECS.ComponentsAndTags;
 using Unity.Entities;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 namespace TopDownCharacterController.Project.Scripts.ECS.SystemsAndJobs.Raycasting
 {
@@ -8,15 +9,23 @@ namespace TopDownCharacterController.Project.Scripts.ECS.SystemsAndJobs.Raycasti
     public partial class RaycastTargetSystem : SystemBase
     {
         private Plane _rayCastPlane;
+        private Mouse mouse;
 
         protected override void OnCreate()
         {
             _rayCastPlane = new Plane(Vector3.up, 0);
+            mouse = Mouse.current;
         }
 
         protected override void OnUpdate()
         {
-            var mousePixelCoords = Input.mousePosition;
+            mouse ??= Mouse.current;
+            if (!mouse.leftButton.isPressed) return;
+
+            var mousePixelCoords =  new Vector2(
+                mouse.position.x.ReadValue(),
+                mouse.position.y.ReadValue()
+            );
             var ray = Camera.main.ScreenPointToRay(mousePixelCoords);
 
             // if (Physics.Raycast(ray.origin, ray.direction, out var hit, math.INFINITY ))
