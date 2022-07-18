@@ -53,8 +53,8 @@ namespace TopDownCharacterController.Project.Scripts.ECS.SystemsAndJobs.FlowFiel
                 }).Run();
         }
 
-        [BurstCompile(CompileSynchronously = true, Debug = true, FloatMode = FloatMode.Fast, FloatPrecision = FloatPrecision.Low)]
-        private struct FlowFieldCellPositionsCalculationJob : IJob
+        [BurstCompile]
+        private struct FlowFieldCellPositionsCalculationJob : IJobBurstSchedulable
         {
             [ReadOnly] public int3 FlowFieldSize;
             [ReadOnly] public float CellDiameter;
