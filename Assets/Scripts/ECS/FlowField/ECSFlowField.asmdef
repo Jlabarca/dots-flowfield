@@ -1,0 +1,24 @@
+{
+    "name": "ECSFlowField",
+    "rootNamespace": "",
+    "references": [
+        "Unity.Entities",
+        "Unity.Physics",
+        "Unity.Burst",
+        "Unity.Mathematics",
+        "Unity.Collections",
+        "Unity.Jobs",
+        "Unity.Transforms",
+        "Unity.InputSystem",
+        "Unity.Entities.Hybrid"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
