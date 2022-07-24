@@ -769,7 +769,7 @@ PlayerSettings:
   webGLThreadsSupport: 0
   webGLDecompressionFallback: 0
   scriptingDefineSymbols:
-    Standalone: DOTS_ADD_PARTIAL_KEYWORD;UNITY_PHYSICS_DISABLE_INTEGRITY_CHECKS
+    Standalone: UNITY_PHYSICS_DISABLE_INTEGRITY_CHECKS;ENABLE_HYBRID_RENDERER_V2;DOTS_ADD_PARTIAL_KEYWORD
   additionalCompilerArguments: {}
   platformArchitecture: {}
   scriptingBackend: {}
